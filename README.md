@@ -9,6 +9,7 @@ This Python application provides a real-time password strength checking tool usi
 - **Password Strength Evaluation**: Checks passwords against criteria for weak, moderate, strong, very strong, and insane strength levels.
 - **Real-Time Feedback**: Dynamically updates password strength as you type.
 - **Common Password Detection**: Alerts if the password is too common based on a predefined list.
+- **Time to crack estimation:** Estimates the time required to crack the password based on its entropy.
 - **Entropy Measurement**: Calculates the password's entropy to gauge randomness.
 - **Toggle Password Visibility**: Option to show or hide the entered password.
 - **Asynchronous Common Password Loading**: Uses threading to load a large list of common passwords in the background, ensuring smooth application responsiveness.
