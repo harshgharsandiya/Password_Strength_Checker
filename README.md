@@ -29,6 +29,8 @@ This Python application provides a real-time password strength checking tool usi
 
 3. **Execution**: Run the application using Python:
    ```bash
+   git clone https://github.com/your-username/password-strength-checker.git
+   cd password-strength-checker
    python password_strength_checker.py
    ```
 
