@@ -1,6 +1,3 @@
-Certainly! Here's the `README.md` content formatted for GitHub with appropriate Markdown syntax:
-
-```markdown
 # Password Strength Checker
 
 This Python application uses Tkinter to provide a user interface for checking the strength of passwords based on various criteria such as length, character types, and commonality. It includes features like password visibility toggle and support for clearing the password field using Ctrl + Backspace.
@@ -43,4 +40,3 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 ## License
 
 This project is licensed under the MIT License.
-```
