@@ -21,6 +21,10 @@ This Python application provides a real-time password strength checking tool usi
 ## Usage
 
 1. **Installation**: Clone the repository and ensure Python 3.x is installed.
+   ```bash
+   python --version
+   git clone https://github.com/your-username/password-strength-checker.git
+   cd password-strength-checker
    
 2. **Dependencies**: Install required dependencies using `pip`:
    ```bash
@@ -29,8 +33,6 @@ This Python application provides a real-time password strength checking tool usi
 
 3. **Execution**: Run the application using Python:
    ```bash
-   git clone https://github.com/your-username/password-strength-checker.git
-   cd password-strength-checker
    python password_strength_checker.py
    ```
 
