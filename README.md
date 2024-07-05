@@ -1,42 +1,62 @@
-# Password Strength Checker
+# Real-Time Password Strength Checker
 
-This Python application uses Tkinter to provide a user interface for checking the strength of passwords based on various criteria such as length, character types, and commonality. It includes features like password visibility toggle and support for clearing the password field using Ctrl + Backspace.
+## Overview
+
+This Python application provides a real-time password strength checking tool using Tkinter for the GUI. It evaluates passwords based on length, character types (uppercase, lowercase, digits, special characters), commonality, and entropy.
 
 ## Features
 
-- **Password Strength Checking:** Validates passwords based on length, uppercase/lowercase letters, numbers, and special characters.
-- **Password Visibility Toggle:** Allows users to toggle visibility of the password for convenience.
-- **Clear Password Field:** Supports clearing the password field using Ctrl + Backspace.
-- **User-Friendly Interface:** Built using Tkinter, providing a simple and intuitive graphical interface.
+- **Password Strength Evaluation**: Checks passwords against criteria for weak, moderate, strong, very strong, and insane strength levels.
+- **Real-Time Feedback**: Dynamically updates password strength as you type.
+- **Common Password Detection**: Alerts if the password is too common based on a predefined list.
+- **Entropy Measurement**: Calculates the password's entropy to gauge randomness.
+- **Toggle Password Visibility**: Option to show or hide the entered password.
+- **Asynchronous Common Password Loading**: Uses threading to load a large list of common passwords in the background, ensuring smooth application responsiveness.
 
 ## Requirements
 
 - Python 3.x
-- Tkinter (usually comes pre-installed with Python)
+- Tkinter (typically included with Python installations)
 
 ## Usage
 
-1. **Clone the repository:**
-   ```
-   git clone https://github.com/yourusername/password-strength-checker.git
-   ```
-
-2. **Navigate to the project directory:**
-   ```
-   cd password-strength-checker
+1. **Installation**: Clone the repository and ensure Python 3.x is installed.
+   
+2. **Dependencies**: Install required dependencies using `pip`:
+   ```bash
+   pip install tkinter
    ```
 
-3. **Run the application:**
-   ```
+3. **Execution**: Run the application using Python:
+   ```bash
    python password_strength_checker.py
    ```
 
-4. **Enter a password and click "Check Strength" to see the evaluation.**
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements, features, or bug fixes.
+4. **Interacting with the Application**:
+   - Enter a password in the input field.
+   - Password strength is evaluated in real-time and displayed.
+   - Use checkboxes and buttons to interact with additional features.
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License
+
+Copyright (c) [2024] [harshgharsandiya]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
