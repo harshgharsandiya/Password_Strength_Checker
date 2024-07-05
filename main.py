@@ -4,6 +4,16 @@ import re
 import math
 import threading
 
+def calculate_time_to_crack(password, attacker_power, entropy):
+    
+    # convert entropy to number of possible combinations
+    combinations = 2 ** entropy
+    
+    #Estimate time to crack in seconds
+    time_to_crack_seconds = combinations / attacker_power
+    
+    return time_to_crack_seconds
+
 def calculate_entropy(password):
     #character sets
     lowercase = "abcdefghijklmnopqrstuvwxyz"
@@ -33,10 +43,10 @@ def check_password_strength(password):
     
     # Check common password
     if password in common_passwords:
-        return "Weak: \nPassword is too common."
+        return "Weak: \nPassword is too common.", 0
     
     if len(password) < min_length:
-        return f"Weak: \nPassword must be at least {min_length} characters long."
+        return f"Weak: \nPassword must be at least {min_length} characters long.", 0
     
     #Check character types
     strength = []
@@ -55,20 +65,26 @@ def check_password_strength(password):
         
     #Entropy of password
     entropy = calculate_entropy(password)
+    
+    #Time to crack in seconds
+    time_to_crack_seconds = calculate_time_to_crack(password, 10**4, entropy)
+    
+    #Time to crack in minutes and seconds
+    time_to_crack_minutes = time_to_crack_seconds // 60
             
     #Strenght level
     if len(strength) >= 3 and len(password) >= min_length and entropy >= 60:
-        return "Insane"
+        return "Insane", time_to_crack_seconds
     elif len(strength) >= 3 and len(password) >= min_length and entropy >= 40:
-        return "Very Strong"
+        return "Very Strong", time_to_crack_seconds
     elif len(strength) >= 3 and len(password) >= min_length and entropy >= 20:
-        return "Strong"
+        return "Strong", time_to_crack_seconds
     elif len(strength) >= 3 and len(password) >= min_length:
-        return "Moderate"
+        return "Moderate", time_to_crack_seconds
     elif len(strength) >= 2 and len(password) >= min_length:
-        return "Weak"
+        return "Weak", time_to_crack_seconds
     else:
-        return "Very Weak"
+        return "Very Weak", time_to_crack_seconds
 
 def toggle_password_visibility():
     global show_password
@@ -80,8 +96,11 @@ def toggle_password_visibility():
 
 def on_check(event=None):
     password = password_entry.get()
-    strength = check_password_strength(password)
+    result = check_password_strength(password)
+    strength, time_to_crack_seconds = result[0], result[1]
+    time_to_crack_hours = time_to_crack_seconds / 3600
     strength_label.config(text=f"Strength: {strength}")
+    strength_label.config(text=f"Strength: {strength}\nEstimated Crack Time: {time_to_crack_hours:.2f} hours")
 
 def clear_password_field(event):
     if event.keysym == 'BackSpace' and event.state & 0x4:
